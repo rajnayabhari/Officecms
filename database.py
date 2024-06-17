@@ -4,11 +4,20 @@ import hashlib
 
 def get_db_connection():
     return psycopg2.connect(
-        database="cms",
-        user="postgres",
-        password="@hybesty123",
-        host="127.0.0.1",
-        port=5432
+        #for local
+        # database="cms",
+        # user="postgres",
+        # password="@hybesty123",
+        # host="127.0.0.1",
+        # port=5432
+        
+        #for render.com
+        
+        database="cms_7j5a"
+        user="cms_7j5a_user"
+        password="MAFQ8hwWXNIo3JQIC3Zc2gqW8fPGdKhX"
+        host="dpg-cpo6qpo8fa8c739n2ie0-a"
+        port="5432"
     )
 def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()   
