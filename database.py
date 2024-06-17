@@ -13,8 +13,8 @@ def get_db_connection():
         
         #for render.com
         
-        database="cms_7j5a",
-        user="digi_muni",
+        database="digi_muni",
+        user="digi_muni_user",
         password="52ODMHwZil8AUVUFP2uOl13ZtiHtJz8j",
         host="dpg-cpo891bv2p9s73fruoag-a",
         port="5432"
