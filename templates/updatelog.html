@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Form{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+<form method="post">
+    <label>Date:</label>
+    <p>{{ item[1] }}</p>
+    
+    <label>Time:</label>
+    <p>{{ item[2] }}</p>
+    
+    <label for="customername">Customer name</label>
+    <select name="customername" id="customername" required>
+        {% for name in customer_names %}
+            <option value="{{ name }}" {% if item[3] == name %} selected {% endif %}>{{ name.capitalize() }}</option>
+        {% endfor %}
+    </select>
+    
+    <label>Issue</label>
+    <textarea name="issue" id="issue" required>{{ item[4] }}</textarea>
+    
+    <label>Status</label>
+    <select name="status" id="status" required>
+        <option value="solved" {% if item[5] == "solved" %} selected {% endif %}>Solved</option>
+        <option value="pending" {% if item[5] == "pending" %} selected {% endif %}>Pending</option>
+    </select>
+    
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

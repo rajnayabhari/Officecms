@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='attendance.css') }}">
+    <div class="container">
+        <h1>Attendance Page</h1>
+        <form id="attendanceForm" method="post" action="/registerattendance">
+            <label for="name">Name:</label>
+            {{name.capitalize()}}
+            <label for="date">Date:</label>
+                {{date}}
+
+            <label for="date">Date:</label>
+                {{time}}
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+                <option value="Late">Late</option>
+            </select>
+            <button type="submit">Add Record</button>
+        </form>
+        {% if info %}
+
+        {{info}}
+
+        {% endif %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="attendanceTableBody">
+                {% for item in items %}
+                <tr>
+                            <td>{{ item[0].capitalize() }}</td>
+                            <td>{{ item[1] }}</td>
+                            <td> {{ item[2] }}</td>
+                            <td>{{ item[3].capitalize() }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

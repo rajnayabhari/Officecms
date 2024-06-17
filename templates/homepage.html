@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+
+<div id="welcomeBox" class="content-box welcome-box">
+    <h2>Welcome, {{name}}!</h2>
+</div>
+<div id="main">
+    <section id="search-section">
+        <form action="/search" method="GET" id="searchForm">
+            <input type="text" name="query" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+</div>
+
+<div id="aboutBox" class="content-box">
+    <h1 style="text-align: center;">Issue</h1>
+    <table>
+        <div class="container">
+            <a href="/register" class="add-button">
+                <img src="static/add.png" alt="Add">
+            </a>
+            {% if info %}
+
+            {{info}}
+    
+            {% endif %}
+        </div>
+        
+        <div class="container">
+            <h2>Total No Of Pending Issue:{{total}}</h2>
+        </div>
+
+        
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Customer Name</th>
+                <th>Issue</th>
+                <th>Status</th>
+                <th>Username</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item[1] }}</td>
+                    <td>{{ item[2] }}</td>
+                    <td>{{ item[3].capitalize() }}</td>
+                    <td>{{ item[4].capitalize() }}</td>
+                    <td>{{ item[5].capitalize() }}</td>
+                    <td>{{ item[6].capitalize() }}</td>
+                    <td>
+                        <a href="{{ url_for('updateissue', item_id=item[0]) }}" class="action-button update">Update</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

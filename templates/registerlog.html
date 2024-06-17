@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Form{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="../static/register.css">
+<form method="post" action="/registerlog">
+        <label >Date:</label><p>{{date}}</p>
+        <label >Time:</label><p>{{time}}</p>
+        <label for="customername">Customer name</label>
+        <select name="customername" id="customername" required>
+            {% for name in customer_names %}
+                <option value="{{ name }}">{{ name.capitalize() }}</option>
+            {% endfor %}
+        </select>
+        <label>Issue</label>
+        <textarea name="issue" id="issue" required></textarea>
+        <label>Status</label>
+        <select name="status" id="status" required>
+            <option value="solved">Solved</option>
+            <option value="pending">Pending</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

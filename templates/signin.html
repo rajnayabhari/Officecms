@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="static/signin_style.css" />
+</head>
+
+<body>
+    <div class="logo">
+        <img src="static/LOGO.png" alt="logo" height="300px" width="auto">
+    </div> 
+    <div class="main">
+        <div class="header">
+            <div class="head toggle-border" id="log" onclick="toggleContent('content1')">Login</div>
+            <div class="head" id="reg" onclick="toggleContent('content2')">Register</div>
+        </div>
+        <div class="form_fillup" id="content1" style="display: block;">
+            <form action="/signin" method="post">
+                <input type="text" name="email" id="email" placeholder="Gmail" />
+                <input type="password" name="password" id="password" placeholder="Password" />
+                <button type="submit" class="Btn">Login</button>
+                <p style="color: red;" >{{info}}</p>
+            </form>
+        </div>
+        <div class="register_fillup" id="content2" style="display:none;">
+            <form method="post" action="/signup" id="signup">
+                <input type="text" name="email" id="email" placeholder="Gmail" required/>
+                <input type="text" name="username" id="username" placeholder="Username" required/>
+                <input type="password" name="password" id="password" placeholder="Password" required/>
+                <input type="password" id="conpassword" placeholder="Confirm Password" name="confirm_password"required/>
+                </select><br /><br>
+                <button type="submit" class="Btn" >Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script src="static/signin.js"></script>
+</html>

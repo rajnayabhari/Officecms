@@ -1,0 +1,167 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+#header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+}
+
+nav {
+    position: relative;
+}
+
+nav .menu {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #575757;
+    border-radius: 3px;
+}
+
+/* Responsive Menu */
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+}
+
+.menu-icon i {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    nav .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+    }
+
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+    }
+
+    nav a {
+        text-align: center;
+        width: 100%;
+        padding: 15px 0;
+        border-top: 1px solid #575757;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+/* Dropdown Menu */
+.dropdown1 {
+    position: relative;
+}
+
+.dropdown1 .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown1:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown1 .dropdown-content p {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown1 .dropdown-content p:hover {
+    background-color: #575757;
+}
+
+/* Logout Button */
+nav a[href="/logout"] {
+    background-color: #333;
+    padding: 0;
+}
+
+nav a[href="/logout"] h2 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav a[href="/logout"] h2 img {
+    margin-left: 10px;
+}
+
+a.add-button {
+    display: inline-block;
+    text-align: right;
+    margin-right: 20px; /* Adjust this value to control the right margin */
+    text-decoration: none;
+  }
+  
+  a.add-button h2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+  }
+  
+  a.add-button img {
+    display: block;
+    height: 50px;
+    width: 50px;
+    border: none; /* Remove border if any */
+    padding: 5px; /* Adjust padding around the image */
+    transition: transform 0.3s ease; /* For smooth scaling effect */
+  }
+  
+  a.add-button img:hover {
+    transform: scale(1.1); /* Scale image on hover for effect */
+  }

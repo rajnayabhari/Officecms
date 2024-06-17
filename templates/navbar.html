@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+<script src="../static/hompage.js"></script>
+
+<header id="header">
+    <div class="nav-container">
+        <div class="logo">
+            <h1>DataSys</h1>
+        </div>
+        <nav>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon"><i class="fa fa-bars"></i></label>
+            <div class="menu">
+                <a href="/home">Home</a>
+                {% if role == 'admin' %}
+                <a href="/userlist">Users</a>
+                <a href="/customer">Add customer</a>
+                {% endif %}
+                <a href="/attendance">Attendance</a>
+                <a href="/customerview"> Customers</a>
+                <div class="dropdown1">
+                    <a href="#">Contact Us</a>
+                    <div class="dropdown-content">
+                        <p onclick="phone()">
+                            <i class="fa-solid fa-phone" style="color: #63e6be"></i>
+                            <b>9845256525</b>
+                        </p>
+                        <p onclick="mail()">
+                            <i class="fa-solid fa-envelope" style="color: #74c0fc"></i>
+                            <b>example@.com</b>
+                        </p>
+                        <p onclick="facebook()">
+                            <i class="fa-brands fa-facebook" style="color: #74c0fc"></i>
+                            <b>Facebook</b>
+                        </p>
+                    </div>
+                </div>
+                <a href="/logout" class="add-button"><h2 style="text-align: right;"><img src="{{ url_for('static', filename='logout.png') }}" alt="Logout"height="50px" width="50px">
+                    </h2></a>
+
+
+            </div>
+        </nav>
+    </div>
+</header>

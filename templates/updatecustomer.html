@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+    <form method="post">
+        <label>Customer name</label>
+        <input type="text" name="customername" id="customername" required value="{{item [1] }}">
+        <label>contact no:</label>
+        <input type="number" name="customercontact" id="customercontact"required value="{{ item[2] }}">
+        <button type="submit">Submit</button>
+
+
+    </form>
+    
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Form{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='userlist.css') }}">
+    <main>
+        <h1>Customer List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer name</th>
+                    <th>Contact no</th>
+                    {% if role == 'admin' %}
+
+                    <th>Action</th>
+                    
+                    {% endif %}
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                    <tr>
+                        <td>{{ item[0] }}</td>
+                        <td>{{ item[1] }}</td>
+                        {% if role == 'admin' %}
+                        <td>
+                            <a href="{{ url_for('updatecustomer', item_id=item[2]) }}" class="action-button update">Update</a>
+                            <a href="{{ url_for('deletecustomer', item_id=item[2]) }}" class="action-button delete">Delete</a>
+                        </td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2024 Company Name. All rights reserved.</p>
+    </footer>
+{% endblock %}

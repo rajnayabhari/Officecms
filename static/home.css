@@ -1,0 +1,191 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Content Boxes */
+.content-box {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-box {
+  background-color: #e0f7fa;
+}
+
+/* Typography */
+h1, h2, h3 {
+  margin: 0 0 15px;
+  color: #333;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.action-button {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.action-button.update {
+  background-color: #28a745;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f8f9fa;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-box {
+      margin: 10px;
+      padding: 10px;
+  }
+
+  h1, h2, h3 {
+      font-size: 18px;
+  }
+
+  .action-button {
+      padding: 8px 10px;
+      font-size: 14px;
+  }
+
+  th, td {
+      padding: 8px;
+      font-size: 14px;
+  }
+}
+
+
+/* Container styles */
+.container {
+  overflow: hidden; /* To clear the float */
+  padding: 20px; /* Optional: Add some padding around the container */
+}
+
+/* General styles for the anchor and image */
+.add-button {
+  float: right; /* Float the button to the right */
+  text-align: center;
+  text-decoration: none;
+}
+
+.add-button h2 {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.add-button img {
+  display: block;
+  margin: 0 auto;
+  height: 50px;
+  width: 50px;
+  border: none; /* Remove border if any */
+  transition: transform 0.3s ease; /* For smooth scaling effect */
+}
+
+.add-button img:hover {
+  transform: scale(1.1); /* Scale image on hover for effect */
+}
+
+
+.image-text {
+  margin-top: 10px; /* Adjust margin as needed */
+  font-size: 16px;
+  color: blue;
+}
+
+
+main {
+  padding: 40px 20px;
+}
+#search-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#searchForm {
+  display: inline-flex;
+}
+
+#searchForm input {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+#searchForm button {
+  padding: 10px;
+  border: none;
+  background-color: #4eb634;
+  color: #ffffff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#searchForm button:hover {
+  background-color: #3ca123;
+}
