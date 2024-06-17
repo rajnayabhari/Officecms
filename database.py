@@ -13,10 +13,10 @@ def get_db_connection():
         
         #for render.com
         
-        database="cms_7j5a"
-        user="cms_7j5a_user"
-        password="MAFQ8hwWXNIo3JQIC3Zc2gqW8fPGdKhX"
-        host="dpg-cpo6qpo8fa8c739n2ie0-a"
+        database="cms_7j5a",
+        user="cms_7j5a_user",
+        password="MAFQ8hwWXNIo3JQIC3Zc2gqW8fPGdKhX",
+        host="dpg-cpo6qpo8fa8c739n2ie0-a",
         port="5432"
     )
 def hash_password(password):
